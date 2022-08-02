@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var array=[];
+    let length=+prompt("nhap do dai");
+    for(let i=0;i<length;i++){
+        let arr=+prompt("nhập thứ tự phần tử thứ "+i+" là: ");
+        array.push(arr);
+    }
+      var index = +prompt("Nhập số index bất kỳ : ");
+      var   x = +prompt("Nhập số x bất kỳ")
+    function insertNumberToArray(array,x,index){
+        for (let j = 0; j <= array.length; j++) {
+            if (j == index) {
+                for (let k = (array.length - 1); k >= j; k--) {
+                    array[k + 1] = array[k];
+                }
+                array[j] = x;
+            }
+        }
+        return array
+
+    }
+    let result = insertNumberToArray(array, x, index);
+  document.write(result)
+
+</script>
+</body>
+</html>

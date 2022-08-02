@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkPrime(number) {
+        if (number < 2)  {
+            return false
+        }
+        for (let j = 2; j <= Math.sqrt(number); j++) {
+            if (number%j === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    let x = +prompt("nhập x = ")
+    function sumOfListPrime(x) {
+        let i = 0;
+        let temp = 2;
+        let test = 0;
+        while (temp < x) {
+            if (checkPrime(temp)) {
+               test += temp;
+                i++;
+                temp++;
+            }
+            else {
+                temp++;
+            }
+        }
+        return test;
+    }
+    document.write("Tổng các số nguyên tố từ 0 đến " + x + " là: " + sumOfListPrime(x))
+</script>
+</body>
+</html>
